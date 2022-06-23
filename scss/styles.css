@@ -1,0 +1,40 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  color: #fff;
+}
+
+.list-group-item {
+  width: 20% !important;
+}
+
+.attendance p {
+  color: #000;
+  margin: 0;
+  font-weight: 600;
+  width: 10%;
+}
+
+.attendance .list-group-item {
+  width: 100% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.attendance .list-group-item .attendance-button {
+  background: none;
+  border: 1px solid #000;
+  padding: 8px;
+  border-radius: 3px;
+}
+/*# sourceMappingURL=styles.css.map */
