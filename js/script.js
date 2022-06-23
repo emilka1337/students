@@ -59,9 +59,11 @@ STUDENT_NAMES.forEach(studentName => {
 
     attendanceButtons.forEach((button, index) => {
         button.addEventListener("click", function () {
-            ATTENDANCE[studentName] = index;
-            localStorage.setItem("attendance", JSON.stringify(ATTENDANCE));
-            loadAttendance();
+            if (confirm("Внести изменения?")) {
+                ATTENDANCE[studentName] = index;
+                localStorage.setItem("attendance", JSON.stringify(ATTENDANCE));
+                loadAttendance();
+            }
         });
     });
 });
