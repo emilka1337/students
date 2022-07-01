@@ -33,11 +33,11 @@ document.querySelectorAll('.payment .price').forEach(function (price) {
 
 const STUDENT_NAMES = ["ali", "ismet", "guseyn", "farxad", "mirsadiq"];
 const ATTENDANCE = JSON.parse(localStorage.getItem("attendance")) ?? {
-    "ali": 0,
-    "ismet": 0,
-    "guseyn": 0,
-    "farxad": 0,
-    "mirsadiq": 0
+    "ali": null,
+    "ismet": null,
+    "guseyn": null,
+    "farxad": null,
+    "mirsadiq": null
 }
 
 function loadAttendance() {
@@ -48,8 +48,10 @@ function loadAttendance() {
             item.style.backgroundColor = "#fff";
         });
 
-        for (let i = 0; i <= ATTENDANCE[name]; i++) {
-            attendanceButtons[i].style.backgroundColor = "#000";
+        if (name != null) {
+            for (let i = 0; i <= ATTENDANCE[name]; i++) {
+                attendanceButtons[i].style.backgroundColor = "#000";
+            }
         }
     }
 }
