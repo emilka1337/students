@@ -81,7 +81,7 @@ function colorizeDayOfWeek() {
     document.querySelectorAll(`.agenda-weekdays > .list-group > .list-group-item`).forEach(item => item.className = "list-group-item w-25");
     let currentWeekDay = document.querySelectorAll(`.agenda-weekdays > .list-group:nth-child(${day}) > .list-group-item`);
 
-    if (day != 5 && day != 7 && day != 9) {
+    if (day != 5 && day != 7) {
         currentWeekDay.forEach(item => item.classList.add("bg-warning"));
     } else {
         currentWeekDay.forEach(item => item.classList.add("bg-success"));
