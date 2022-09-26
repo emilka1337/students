@@ -31,11 +31,12 @@ document.querySelectorAll('.payment .price').forEach(function (price) {
 
 //#region Attendace
 
-const STUDENT_NAMES = ["ali", "sr609", "sr610"];
+const STUDENT_NAMES = ["ali", "sr609", "sr610", "murad"];
 const ATTENDANCE = JSON.parse(localStorage.getItem("attendance")) ?? {
     "ali": null,
     "sr609": null,
     "sr610": null,
+    "murad": null,
 }
 
 function loadAttendance() {
