@@ -31,11 +31,10 @@ document.querySelectorAll('.payment .price').forEach(function (price) {
 
 //#region Attendace
 
-const STUDENT_NAMES = ["ali", "sr609", "sr610", "murad"];
+const STUDENT_NAMES = ["ali", "sr609", "murad"];
 const ATTENDANCE = JSON.parse(localStorage.getItem("attendance")) ?? {
     "ali": null,
     "sr609": null,
-    "sr610": null,
     "murad": null,
 }
 
@@ -71,20 +70,20 @@ STUDENT_NAMES.forEach(studentName => {
 
 //#endregion
 
-
 function colorizeDayOfWeek() {
     let date = new Date();
     let day = date.getDay();
+    let weekends = [5, 7];
 
     day += day == 0 ? 9 : 2; // Корректировка дней недели
 
     document.querySelectorAll(`.agenda-weekdays > .list-group > .list-group-item`).forEach(item => item.className = "list-group-item w-25");
     let currentWeekDay = document.querySelectorAll(`.agenda-weekdays > .list-group:nth-child(${day}) > .list-group-item`);
 
-    if (day != 5 && day != 7) {
-        currentWeekDay.forEach(item => item.classList.add("bg-warning"));
-    } else {
+    if (weekends.includes(day)) {
         currentWeekDay.forEach(item => item.classList.add("bg-success"));
+    } else {
+        currentWeekDay.forEach(item => item.classList.add("bg-warning"));
     }
 }
 
